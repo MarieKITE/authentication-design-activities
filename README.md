@@ -137,3 +137,9 @@ Seit v6 sind alle 33 Aktivitäten interaktiv.
 - Methodenseite: aufklappbare Tipps „Prototyping: Fake it until you make it“
 - Startseite: Hinweis „Menschen & Kontext zuerst, nicht Technologie“
 - Literatur ergänzt: ISO 9241-110:2020, Rogers, Sharp & Preece 2023, Weiser & Brown 1997
+
+## Neu in v16
+
+- **Literatur reduziert** auf Quellen mit direktem Bezug zu einer Methode oder Aktivität (68 statt 112). Allgemeine Grundlagenliteratur (z. B. qualitative Methodologie, Diskursanalyse, Designtheorie) liegt in `refs.js` unter `ADA_REFERENCES_ARCHIVE` und kann bei Bedarf zurückverschoben werden. In den Aktivitäten stehen die Quellen mit direktem Bezug oben; Quellen „über empfohlene Methoden“ sind zugeklappt
+- **Impressum**: Mitwirkende (Konzept und Inhalte: Marie Beuthel; Grafikdesign: Claire Paquier) – in `data.js` unter `ADA_ABOUT.credits`
+- **Startseite**: Hero-Grafik bleibt vollständig innerhalb des Rahmens, auch bei Zeiger-Bewegung und auf kleinen Bildschirmen

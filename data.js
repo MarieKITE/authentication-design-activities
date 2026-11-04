@@ -380,6 +380,7 @@ window.ADA_ABOUT = {
     "Beuthel, M. (2026). Authentication Design Activities [Online-Toolkit]. Design Research Lab, Universität der Künste Berlin."
   ],
   impressum: { name: "Marie Beuthel", address: "", email: "", phone: "", responsible: "" },
+  credits: [[["Concept and content", "Konzept und Inhalte"], "Marie Beuthel"], [["Graphic design", "Grafikdesign"], "Claire Paquier"]],
   /* public address of the tool for the share dialog / QR code (e.g. the GitHub Pages address later) */
   shareUrl: "https://claude.ai/artifact/3eVG1SW2kDJ2S3aCQLkx2a"
 };

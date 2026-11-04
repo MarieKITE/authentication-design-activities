@@ -81,9 +81,9 @@
 
   Object.assign(T.en, {
     literature: "Literature", author: "Marie Beuthel", byAuthor: "by Marie Beuthel", conceptBy: "Concept and content: Marie Beuthel",
-    litIntro: "The Authentication Design Activities were developed in a design research context. The first four groups list the references cited in the dissertation on the Authentication Design Methods; the last group adds further reading. Numbers link to the activities: filled numbers mark a direct relation, outlined numbers a relation via a recommended method.",
+    litIntro: "The Authentication Design Activities were developed in a design research context. The first four groups list a selection of the references cited in the dissertation on the Authentication Design Methods – those that relate directly to a method or activity; the last group adds further reading. Numbers link to the activities: filled numbers mark a direct relation, outlined numbers a relation via a recommended method.",
     litByTopic: "By topic", litByAct: "By activity", litDirect: "directly related", litVia: "via recommended methods", litAll: "All references",
-    litG: { methods: "Participatory design and design methods", interaction: "Prototyping, embodiment and tangibles", research: "Qualitative research and analysis", auth: "Authentication and wearables", further: "Further reading" },
+    litG: { methods: "Participatory design and design methods", interaction: "Prototyping, embodiment and tangibles", research: "Analysing interactions and data", auth: "Authentication and wearables", further: "Further reading" },
     litLink: "Literature ({n})", rRefs: "References for the activities in this report",
     mapHint: "Upload a floor plan or photo, or draw on the grid. Place touch points, draw people's movements and mark areas. Add several sheets for floors or locations.",
     mapUpload: "Upload floor plan", mapRemoveImg: "Remove image", mapTools: "Tools", mapLegend: "Toolbox", mapMove: "People's movements", mapRectMeans: "Rectangle means…", mapCircleMeans: "Circle means…",
@@ -105,9 +105,9 @@
   });
   Object.assign(T.de, {
     literature: "Literatur", author: "Marie Beuthel", byAuthor: "von Marie Beuthel", conceptBy: "Konzept und Inhalte: Marie Beuthel",
-    litIntro: "Die Authentication Design Activities sind im Kontext der Designforschung entstanden. Die ersten vier Gruppen enthalten die in der Dissertation zu den Authentication Design Methods zitierten Quellen, die letzte Gruppe ergänzt weiterführende Literatur. Die Zahlen führen zu den Aktivitäten: gefüllte Zahlen zeigen einen direkten Bezug, umrandete einen Bezug über eine empfohlene Methode.",
+    litIntro: "Die Authentication Design Activities sind im Kontext der Designforschung entstanden. Die ersten vier Gruppen enthalten eine Auswahl der in der Dissertation zu den Authentication Design Methods zitierten Quellen – jene, die sich direkt auf eine Methode oder Aktivität beziehen; die letzte Gruppe ergänzt weiterführende Literatur. Die Zahlen führen zu den Aktivitäten: gefüllte Zahlen zeigen einen direkten Bezug, umrandete einen Bezug über eine empfohlene Methode.",
     litByTopic: "Nach Thema", litByAct: "Nach Aktivität", litDirect: "direkter Bezug", litVia: "über empfohlene Methoden", litAll: "Alle Referenzen",
-    litG: { methods: "Partizipatives Design und Designmethoden", interaction: "Prototyping, Embodiment und Tangibles", research: "Qualitative Forschung und Analyse", auth: "Authentifizierung und Wearables", further: "Weiterführende Literatur" },
+    litG: { methods: "Partizipatives Design und Designmethoden", interaction: "Prototyping, Embodiment und Tangibles", research: "Interaktionen und Daten analysieren", auth: "Authentifizierung und Wearables", further: "Weiterführende Literatur" },
     litLink: "Literatur ({n})", rRefs: "Literatur zu den Aktivitäten in diesem Bericht",
     mapHint: "Ladet einen Grundriss oder ein Foto hoch oder zeichnet auf dem Raster. Setzt Touch Points, zeichnet Bewegungen und markiert Bereiche. Für Etagen oder Orte legt ihr weitere Pläne an.",
     mapUpload: "Grundriss hochladen", mapRemoveImg: "Bild entfernen", mapTools: "Werkzeuge", mapLegend: "Toolbox", mapMove: "Bewegungen der Menschen", mapRectMeans: "Rechteck bedeutet…", mapCircleMeans: "Kreis bedeutet…",
@@ -454,7 +454,7 @@
     var r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
     cv.width = r.width * dpr; cv.height = r.height * dpr;
     var g = cv.getContext("2d"); g.scale(dpr, dpr);
-    var W = r.width, H = r.height, cx = W * .55, cy = H * .55, R = Math.min(W, H) * .36;
+    var W = r.width, H = r.height, R = Math.min(W * .3, H * .31) * .96, cx = W * .52, cy = H * .5; /* everything incl. outline and pointer shift stays inside the frame */
     var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     /* pointer attraction: P = smoothed offset (-1..1) and strength 0..1 */
     var P = { x: 0, y: 0, s: 0 }, T = { x: 0, y: 0, s: 0 };
@@ -570,7 +570,7 @@
       '<div class="act-head"><div><span class="act-label caps ' + (c.outline ? "cat-chip outline" : "") + '" style="' + chipStyle(c) + '">' + t("activity") + " " + n + " · " + L([c.en, c.de]) + "</span> " + modeBadge(n) +
       "<h1>" + esc(L(d.title)) + '</h1><p class="act-q">' + esc(L(qOf(d))) + '</p><p class="act-i">' + esc(L(d.i)) + '</p><p class="mode-note m-' + modeOf(n) + '">' + modeIcon(modeOf(n)) + "<span>" + t("modes")[modeOf(n)][1] + "</span></p></div>" +
       (d.methods.length ? '<aside class="recs' + (d.methods.length >= 9 ? " lots" : d.methods.length >= 7 ? " many" : "") + '"><div class="recs-in"><span class="caps recs-t">' + t("recs").replace(/^(Methoden-|Method )/, "$1<br>") + "</span>" + recs + "</div></aside>" : "<div></div>") + "</div>" +
-      '<div class="act-tools"><label class="btn small"><input type="checkbox" id="doneChk"' + (a.done ? " checked" : "") + "> " + t("markDone") + '</label><a class="btn small ghost" href="#cat-' + c.id + '">← ' + t("back") + '</a><span style="flex:1"></span>' + (function () { var rr = refsForAct(n), k = rr.direct.length + rr.via.length; return (EX ? "" : '<button class="linkbtn small-lit ex-peek" type="button" id="exPeek"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" style="vertical-align:-2px"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 1.5a5.5 5.5 0 0 1 0 11z" fill="currentColor"/></svg> ' + t("exPeek") + "</button>") + (k ? '<button class="linkbtn small-lit" type="button" id="litBtn">' + fmt(t("litLink"), { n: k }) + "</button>" : ""); })() + "</div>" +
+      '<div class="act-tools"><label class="btn small"><input type="checkbox" id="doneChk"' + (a.done ? " checked" : "") + "> " + t("markDone") + '</label><a class="btn small ghost" href="#cat-' + c.id + '">← ' + t("back") + '</a><span style="flex:1"></span>' + (function () { var rr = refsForAct(n), k = rr.direct.length || rr.via.length; return (EX ? "" : '<button class="linkbtn small-lit ex-peek" type="button" id="exPeek"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" style="vertical-align:-2px"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 1.5a5.5 5.5 0 0 1 0 11z" fill="currentColor"/></svg> ' + t("exPeek") + "</button>") + (k ? '<button class="linkbtn small-lit" type="button" id="litBtn">' + fmt(t("litLink"), { n: k }) + "</button>" : ""); })() + "</div>" +
       '<section class="act-body" id="body"></section>' +
       '<nav class="pager">' + (prev ? '<a href="#activity-' + prev.n + '">← ' + prev.n + " · " + esc(L(prev.title)) + "</a>" : "<span></span>") + (next ? '<a href="#activity-' + next.n + '">' + next.n + " · " + esc(L(next.title)) + " →</a>" : "") + "</nav>";
     var pk = document.getElementById("exPeek"); if (pk) pk.onclick = function () { exampleDialog(n); };
@@ -1189,7 +1189,7 @@
     var rr = refsForAct(n);
     openDlg("<h2>" + t("literature") + " · " + t("activity") + " " + n + "</h2>" +
       (rr.direct.length ? '<h4 class="caps" style="color:var(--c-blue);margin:4px 0 0">' + t("litDirect") + '</h4><ul class="refs">' + rr.direct.map(function (r) { return refLine(r); }).join("") + "</ul>" : "") +
-      (rr.via.length ? '<h4 class="caps" style="color:var(--c-blue);margin:4px 0 0">' + t("litVia") + '</h4><ul class="refs">' + rr.via.map(function (r) { return refLine(r); }).join("") + "</ul>" : "") +
+      (rr.via.length ? '<details class="lit-via"' + (rr.direct.length ? "" : " open") + '><summary class="caps" style="color:var(--c-blue)">' + t("litVia") + " (" + rr.via.length + ')</summary><ul class="refs">' + rr.via.map(function (r) { return refLine(r); }).join("") + "</ul></details>" : "") +
       '<div class="row"><a class="btn" href="#literature" data-close>' + t("litAll") + '</a><button class="btn ghost" type="button" data-close>' + t("close") + "</button></div>");
   }
 
@@ -1730,7 +1730,7 @@
   function renderAbout() {
     var A = window.ADA_ABOUT || {}, im = A.impressum || {};
     var lines = [im.name, im.address, im.email ? '<a href="mailto:' + esc(im.email) + '">' + esc(im.email) + "</a>" : "", im.phone].filter(Boolean);
-    view.innerHTML = '<h1 style="color:var(--c-blue);font-weight:800">' + t("about") + '</h1><div class="start-grid about-grid"><section class="panel"><h2>' + t("aboutTool") + "</h2><p>" + esc(L(A.context)) + "</p><p>" + t("aboutUse") + '</p><h3 class="caps" style="color:var(--c-blue);margin-top:14px">' + t("aboutCite") + '</h3><p class="cite-box">' + esc(L(A.cite)) + '</p></section><section class="panel"><h2>' + t("imprint") + "</h2>" + (lines.length ? "<p>" + lines.map(function (x) { return x.indexOf("<a ") === 0 ? x : esc(x); }).join("<br>") + "</p>" : "") + (im.responsible ? "<p>" + t("imprintResp") + ": " + esc(im.responsible) + "</p>" : "") + '<h3 class="caps" style="color:var(--c-blue);margin-top:14px">' + t("privacy") + "</h3><p>" + t("privacyText") + '</p></section><section class="panel" style="grid-column:1 / -1"><h2>' + t("a11yTitle") + "</h2><p>" + t("a11yText") + "</p></section></div>";
+    view.innerHTML = '<h1 style="color:var(--c-blue);font-weight:800">' + t("about") + '</h1><div class="start-grid about-grid"><section class="panel"><h2>' + t("aboutTool") + "</h2><p>" + esc(L(A.context)) + "</p><p>" + t("aboutUse") + '</p><h3 class="caps" style="color:var(--c-blue);margin-top:14px">' + t("aboutCite") + '</h3><p class="cite-box">' + esc(L(A.cite)) + '</p></section><section class="panel"><h2>' + t("imprint") + "</h2>" + (lines.length ? "<p>" + lines.map(function (x) { return x.indexOf("<a ") === 0 ? x : esc(x); }).join("<br>") + "</p>" : "") + (im.responsible ? "<p>" + t("imprintResp") + ": " + esc(im.responsible) + "</p>" : "") + (A.credits && A.credits.length ? '<dl class="credits">' + A.credits.map(function (c) { return "<dt>" + esc(L(c[0])) + "</dt><dd>" + esc(c[1]) + "</dd>"; }).join("") + "</dl>" : "") + '<h3 class="caps" style="color:var(--c-blue);margin-top:14px">' + t("privacy") + "</h3><p>" + t("privacyText") + '</p></section><section class="panel" style="grid-column:1 / -1"><h2>' + t("a11yTitle") + "</h2><p>" + t("a11yText") + "</p></section></div>";
   }
 
 
