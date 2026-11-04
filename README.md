@@ -143,3 +143,14 @@ Seit v6 sind alle 33 Aktivitäten interaktiv.
 - **Literatur reduziert** auf Quellen mit direktem Bezug zu einer Methode oder Aktivität (68 statt 112). Allgemeine Grundlagenliteratur (z. B. qualitative Methodologie, Diskursanalyse, Designtheorie) liegt in `refs.js` unter `ADA_REFERENCES_ARCHIVE` und kann bei Bedarf zurückverschoben werden. In den Aktivitäten stehen die Quellen mit direktem Bezug oben; Quellen „über empfohlene Methoden“ sind zugeklappt
 - **Impressum**: Mitwirkende (Konzept und Inhalte: Marie Beuthel; Grafikdesign: Claire Paquier) – in `data.js` unter `ADA_ABOUT.credits`
 - **Startseite**: Hero-Grafik bleibt vollständig innerhalb des Rahmens, auch bei Zeiger-Bewegung und auf kleinen Bildschirmen
+
+## Neu in v17
+
+- Sprache geprüft: alle Seiten in beiden Sprachen automatisch durchsucht; Englisch jetzt in American English (Methodennamen „Relabelling“ als Eigenname aus der Literatur unverändert)
+- Beispielteam international: Amara, Yusuf & Mei
+- **2 Prozess**: Methoden je Abschnitt alphabetisch, „i“ öffnet die Methodenbeschreibung, Zeitraum (von/bis) je Methode und **Projektzeitplan** als Zeitachse (Wochen/Monate, „heute“-Linie); erscheint auch im Bericht
+- **12 Schlüsselzitate**: Zitate und beobachtete Handlungen getrennt aufgelistet, Visionen (Utopie usw.) entfernt; Quelle je Eintrag: Methode (in Aktivität 2 geplante zuerst, Datum wird übernommen), Datum, Zeitstempel, Person (Rolle), Kontext
+- Beispiel-Knopf mit Glühbirne
+- **31 Iterationen** als Prozesslinie mit Schleifen (Prototyp bauen → testen → Feedback → ändern)
+- Erinnerung in der Projektkarte, das Projekt als Datei zu sichern; Browser wird gebeten, die Daten dauerhaft zu behalten
+- Freigabe-Link und QR-Code: https://mariekite.github.io/authentication-design-activities/
