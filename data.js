@@ -1,5 +1,5 @@
 /* Authentication Design Activities – content data (EN / DE)
-   Source: "Authentication Design Activities" booklet (2021 edition, 33 activities in 7 categories).
+   Source: "Authentication Design Activities" booklet (2021 edition, 33 activities in 7 categories); Activity 34 (Accessibility Check) added in the online version.
    Edit this file to refine texts; the app reads everything from here. */
 
 window.ADA_CATEGORIES = [
@@ -304,6 +304,13 @@ window.ADA_ACTIVITIES = [
         "Baut Prototypen eurer Konzepte und testet sie mit potenziellen Nutzer*innen. Sammelt die Iterationen und das Feedback der Testpersonen."],
     fields: [["Iteration", "Iteration"], ["User feedback", "Feedback der Nutzer*innen"], ["Changes & new ideas", "Änderungen & neue Ideen"]],
     methods: ["proto", "workshop", "obs", "spatial", "testing"] },
+  { n: 34, cat: "iterative", type: "access",
+    title: ["Accessibility Check", "Barrierefreiheits-Check"],
+    q: ["Who could be excluded by your concept – and which alternatives make it usable for everyone?", "Wen könnte euer Konzept ausschließen – und welche Alternativen machen es für alle nutzbar?"],
+    i: ["Go through your concept with different abilities and situations in mind. Note where barriers arise, which alternative ways you offer and with whom you will test them. Use the standards below as a reference – and involve people with disabilities, a checklist cannot replace them.",
+        "Geht euer Konzept mit unterschiedlichen Fähigkeiten und Situationen im Kopf durch. Notiert, wo Barrieren entstehen, welche alternativen Wege ihr anbietet und mit wem ihr sie testet. Nutzt die Standards unten als Referenz – und bezieht Menschen mit Behinderungen ein, eine Checkliste ersetzt sie nicht."],
+    fields: [["Barriers", "Barrieren"], ["Alternatives", "Alternativen"], ["Test with", "Testen mit"]],
+    methods: ["testing", "proto", "interview", "body", "workshop"] },
   { n: 32, cat: "reflection", type: "mind",
     title: ["Possible Factors", "Mögliche Faktoren"],
     q: ["What else could influence the decision for your authentication?", "Was könnte die Entscheidung für eure Authentifizierung noch beeinflussen?"],
@@ -397,7 +404,7 @@ window.ADA_ROLES = [
 window.ADA_MODES = { 1: "frame", 2: "frame", 4: "frame",
   3: "now", 5: "now", 6: "now", 7: "now", 8: "now", 9: "now", 10: "now", 12: "now", 13: "now", 14: "now",
   11: "concept", 15: "concept", 16: "concept", 17: "concept", 18: "concept", 19: "concept", 20: "concept", 21: "concept", 22: "concept", 23: "concept", 24: "concept", 25: "concept", 26: "concept", 27: "concept", 28: "concept", 29: "concept",
-  30: "reflect", 31: "reflect", 32: "reflect", 33: "reflect" };
+  30: "reflect", 31: "reflect", 32: "reflect", 33: "reflect", 34: "concept" };
 
 /* ---- v14: guiding questions when an existing procedure is reflected ---- */
 window.ADA_EXISTING_Q = {
@@ -416,7 +423,8 @@ window.ADA_EXISTING_Q = {
   26: ["Which authentication principles does the existing procedure use, and which alternatives would there be?", "Welche Authentifizierungsprinzipien nutzt das bestehende Verfahren, und welche Alternativen gäbe es?"],
   27: ["Which factors are combined today, and does the combination suit the context?", "Welche Faktoren werden heute kombiniert, und passt die Kombination zum Kontext?"],
   28: ["How could the existing procedure develop – in the near and the far future?", "Wie könnte sich das bestehende Verfahren entwickeln – in naher und ferner Zukunft?"],
-  29: ["What does the system behind the existing procedure look like, and where are its weak spots?", "Wie sieht das System hinter dem bestehenden Verfahren aus, und wo liegen seine Schwachstellen?"]
+  29: ["What does the system behind the existing procedure look like, and where are its weak spots?", "Wie sieht das System hinter dem bestehenden Verfahren aus, und wo liegen seine Schwachstellen?"],
+  34: ["Who is excluded by the existing procedure today – and which alternatives does it offer?", "Wen schließt das bestehende Verfahren heute aus – und welche Alternativen bietet es?"]
 };
 
 /* ---- v14: background page on authentication ---- */
@@ -450,8 +458,8 @@ window.ADA_BASICS = [
     p: ["An identity management system (IDMS) registers, stores and manages identities and their credentials; an access control system (ACS) decides whether access is granted. The authentication interaction is the visible part in between (see the start page and Activity 29).",
         "Ein Identitätsmanagementsystem (IDMS) registriert, speichert und verwaltet Identitäten und ihre Nachweise; ein Zugangskontrollsystem (ACS) entscheidet, ob Zugang gewährt wird. Die Authentication Interaction ist der sichtbare Teil dazwischen (siehe Startseite und Aktivität 29)."] },
   { id: "access", h: ["Security must not cost accessibility", "Sicherheit darf nicht auf Kosten der Zugänglichkeit gehen"],
-    p: ["Every procedure presupposes physical, sensory and cognitive abilities – not everyone can use every factor, so authentication can become a barrier. Good authentication considers different needs and offers alternatives, fallbacks and a way to recover from a forgotten PIN or a lost card. Privacy and the social context count too: who is watching, who helps, who is affected without using the system?",
-        "Jedes Verfahren setzt körperliche, sensorische und kognitive Fähigkeiten voraus – nicht alle Menschen können alle Verfahren nutzen, Authentifizierung kann so zur Barriere werden. Gute Authentifizierung berücksichtigt unterschiedliche Bedürfnisse und bietet Alternativen, Rückfallwege und eine Lösung bei vergessener PIN oder verlorener Karte. Auch Datenschutz und sozialer Kontext zählen: Wer schaut zu, wer hilft, wer ist betroffen, ohne das System zu nutzen?"] }
+    p: ["Every procedure presupposes physical, sensory and cognitive abilities – not everyone can use every factor, so authentication can become a barrier. Good authentication considers different needs and offers alternatives, fallbacks and a way to recover from a forgotten PIN or a lost card. Privacy and the social context count too: who is watching, who helps, who is affected without using the system? Activity 34 helps to check a concept systematically – with standards such as WCAG 2.2 and EN 301 549 as a reference.",
+        "Jedes Verfahren setzt körperliche, sensorische und kognitive Fähigkeiten voraus – nicht alle Menschen können alle Verfahren nutzen, Authentifizierung kann so zur Barriere werden. Gute Authentifizierung berücksichtigt unterschiedliche Bedürfnisse und bietet Alternativen, Rückfallwege und eine Lösung bei vergessener PIN oder verlorener Karte. Auch Datenschutz und sozialer Kontext zählen: Wer schaut zu, wer hilft, wer ist betroffen, ohne das System zu nutzen? Aktivität 34 hilft, ein Konzept systematisch zu prüfen – mit Standards wie WCAG 2.2 und EN 301 549 als Referenz."] }
 ];
 /* tips on the methods page */
 window.ADA_PROTO_TIPS = {
@@ -462,3 +470,36 @@ window.ADA_PROTO_TIPS = {
          ["Use existing interaction structures for inspiration and stay open for unexpected concepts. Document all results – there are main and side results.", "Lasst euch von bestehenden Interaktionsstrukturen inspirieren und bleibt offen für unerwartete Konzepte. Dokumentiert alle Ergebnisse – es gibt Haupt- und Nebenergebnisse."],
          ["Any concept can be realized in different analog and digital ways.", "Jedes Konzept lässt sich auf unterschiedliche analoge und digitale Weise umsetzen."]] };
 window.ADA_BASICS_REFS = ["adams1999", "ogorman2003", "bonneau2012", "iso2020", "rogers2023", "weiser1997", "lyastani2020", "lassak2024", "froebel2021"];
+
+/* ---- v18: Activity 34 accessibility check ---- */
+window.ADA_A11Y = [
+  { id: "see", h: ["Seeing", "Sehen"], who: ["blind people, low vision, color blindness", "blinde Menschen, Sehbehinderung, Farbenblindheit"],
+    q: [["Can every step be completed without seeing – with a screen reader, tactile or audio cues?", "Lässt sich jeder Schritt ohne Sehen ausführen – mit Screenreader, tastbaren oder akustischen Hinweisen?"],
+        ["Are texts, symbols and light signals large and high-contrast enough – and never shown by color alone?", "Sind Texte, Symbole und Lichtsignale groß und kontrastreich genug – und nie nur über Farbe vermittelt?"]] },
+  { id: "hear", h: ["Hearing", "Hören"], who: ["deaf and hard-of-hearing people", "gehörlose und schwerhörige Menschen"],
+    q: [["Is every sound or spoken instruction also available visually or as vibration?", "Gibt es jeden Ton und jede gesprochene Anweisung auch sichtbar oder als Vibration?"],
+        ["Can people get help without having to speak or hear (text, sign language)?", "Bekommen Menschen Hilfe, ohne sprechen oder hören zu müssen (Text, Gebärdensprache)?"]] },
+  { id: "motor", h: ["Movement and body", "Motorik und Körper"], who: ["limited hand use, tremor, wheelchair users, small or tall people", "eingeschränkte Handfunktion, Tremor, Rollstuhl, kleine oder große Menschen"],
+    q: [["Does it work with one hand, little force and without precise or timed movements?", "Funktioniert es mit einer Hand, wenig Kraft und ohne präzise oder zeitkritische Bewegungen?"],
+        ["Are readers, buttons and screens reachable and readable from a seated position?", "Sind Lesegeräte, Tasten und Bildschirme auch im Sitzen erreichbar und lesbar?"]] },
+  { id: "cognitive", h: ["Cognition, language and reading", "Kognition, Sprache und Lesen"], who: ["memory or attention difficulties, learning disabilities, little knowledge of the language", "Gedächtnis- oder Konzentrationsschwierigkeiten, Lernbehinderung, wenig Sprachkenntnisse"],
+    q: [["Does authentication work without remembering, transcribing or solving puzzles – or is there help or an alternative (WCAG 2.2, 3.3.8)?", "Klappt die Authentifizierung ohne Merken, Abschreiben oder Rätsel – oder gibt es Hilfe bzw. eine Alternative (WCAG 2.2, 3.3.8)?"],
+        ["Are instructions short, in plain language, available in several languages, and is there enough time?", "Sind Anleitungen kurz, in einfacher Sprache, in mehreren Sprachen verfügbar – und gibt es genug Zeit?"]] },
+  { id: "bio", h: ["Biometric features", "Biometrische Merkmale"], who: ["unreadable fingerprints, facial differences, changing voice, prostheses", "nicht lesbare Fingerabdrücke, Gesichtsbesonderheiten, veränderte Stimme, Prothesen"],
+    q: [["Is there an equally good alternative when a feature cannot be captured – without having to explain oneself in front of others?", "Gibt es eine gleichwertige Alternative, wenn ein Merkmal nicht erfasst werden kann – ohne sich vor anderen erklären zu müssen?"]] },
+  { id: "situation", h: ["Situations", "Situationen"], who: ["gloves, injured arm, full hands, noise, glare, stress", "Handschuhe, verletzter Arm, volle Hände, Lärm, Blendung, Stress"],
+    q: [["Does it still work with gloves, full hands, noise, bright light or under time pressure?", "Funktioniert es auch mit Handschuhen, vollen Händen, bei Lärm, grellem Licht oder unter Zeitdruck?"]] },
+  { id: "tech", h: ["Access to technology", "Zugang zu Technik"], who: ["no smartphone or account, little digital experience, assistive technology", "kein Smartphone oder Konto, wenig digitale Erfahrung, assistive Technologien"],
+    q: [["Does it work without an own smartphone or account, and with assistive technology (screen reader, switch, magnifier)?", "Funktioniert es ohne eigenes Smartphone oder Konto und mit assistiven Technologien (Screenreader, Taster, Vergrößerung)?"],
+        ["Is there a way with personal support that is not worse, slower or more expensive?", "Gibt es einen Weg mit persönlicher Unterstützung, der nicht schlechter, langsamer oder teurer ist?"]] },
+  { id: "recover", h: ["Errors and recovery", "Fehler und Wiederherstellung"], who: ["everyone – especially people who need more time or support", "alle – besonders Menschen, die mehr Zeit oder Unterstützung brauchen"],
+    q: [["Are error messages perceivable in several ways and understandable, and can people recover (wrong PIN, lost card) without a barrier-laden detour?", "Sind Fehlermeldungen mehrfach wahrnehmbar und verständlich, und kommen Menschen ohne barrierereichen Umweg weiter (falsche PIN, verlorene Karte)?"]] }
+];
+window.ADA_A11Y_STANDARDS = [
+  { name: "WCAG 2.2 (W3C, 2023)", t: ["Guidelines for accessible digital content. For authentication especially 3.3.8 Accessible Authentication (Minimum, AA): no remembering, transcribing or puzzles without an alternative or help; 3.3.9 (Enhanced, AAA) goes further.", "Richtlinien für barrierefreie digitale Inhalte. Für Authentifizierung besonders 3.3.8 Accessible Authentication (Minimum, AA): kein Merken, Abschreiben oder Rätseln ohne Alternative oder Hilfe; 3.3.9 (Enhanced, AAA) geht weiter."], url: "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html" },
+  { name: "EN 301 549", t: ["Harmonized European standard for accessible ICT products and services – including hardware such as terminals and card readers. Refers to WCAG; check the current version at ETSI.", "Harmonisierte europäische Norm für barrierefreie IKT-Produkte und -Dienste – auch Hardware wie Terminals und Kartenleser. Verweist auf WCAG; die aktuelle Version findet ihr bei ETSI."] },
+  { name: "European Accessibility Act – Directive (EU) 2019/882", t: ["Applies since 28 June 2025 to products and services such as consumer banking, e-commerce, payment and self-service terminals – including identification methods. Transposed in Germany by the Barrierefreiheitsstärkungsgesetz (BFSG).", "Gilt seit dem 28. Juni 2025 für Produkte und Dienste wie Verbraucher-Bankdienste, E-Commerce, Zahlungs- und Selbstbedienungsterminals – einschließlich Identifizierungsverfahren. In Deutschland umgesetzt durch das Barrierefreiheitsstärkungsgesetz (BFSG)."] },
+  { name: "ISO/IEC TR 29194:2015", t: ["Guide on designing accessible and inclusive biometric systems, including exception handling for people whose features cannot be captured.", "Leitfaden für barrierefreie und inklusive biometrische Systeme, inklusive Ausnahmebehandlung für Menschen, deren Merkmale nicht erfasst werden können."], url: "https://www.iso.org/standard/45273.html" },
+  { name: "DIN 18040-1", t: ["Barrier-free building in publicly accessible buildings (Germany) – e.g. reach and viewing heights of terminals and readers.", "Barrierefreies Bauen in öffentlich zugänglichen Gebäuden – z. B. Greif- und Sichthöhen von Terminals und Lesegeräten."] },
+  { name: "BITV 2.0", t: ["German ordinance for accessible information technology of public bodies (websites, apps) – relevant for public services.", "Barrierefreie-Informationstechnik-Verordnung für öffentliche Stellen (Websites, Apps) – relevant für Verwaltungsleistungen."] }
+];

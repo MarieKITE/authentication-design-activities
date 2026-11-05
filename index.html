@@ -163,7 +163,7 @@ main { padding: 28px 24px 80px; max-width: 1240px; margin: 0 auto; }
 .field label { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .16em; color: var(--c-blue); font-weight: 700; margin-bottom: 4px; }
 .field input, .field textarea { width: 100%; border: 1.5px solid var(--line); border-radius: 10px; padding: 7px 10px; background: var(--paper); }
 .tl-scroll { overflow-x: auto; padding: 0 8px; }
-.timeline { position: relative; height: 150px; cursor: copy; touch-action: none; min-width: 100%; }
+.timeline { position: relative; height: 150px; cursor: copy; touch-action: none; min-width: max(100%, 620px); }
 .timeline .axis { position: absolute; left: 0; right: 14px; top: 74px; height: 3px; background: var(--c-blue); border-radius: 3px; }
 .timeline .axis::after { content: ""; position: absolute; right: -14px; top: -7px; border-left: 16px solid var(--c-blue); border-top: 8px solid transparent; border-bottom: 8px solid transparent; }
 .tnode { position: absolute; top: 56px; transform: translateX(-50%); width: 38px; height: 38px; cursor: grab; touch-action: none; }
@@ -1009,6 +1009,39 @@ dialog.wide { max-width: min(1180px, calc(100% - 32px)); }
 .ptl-u { font-size: .78rem; border: 1.5px dashed var(--bc); border-radius: 999px; padding: 2px 10px; }
 .bk { margin: 8px 0 0; padding: 8px 10px; border-radius: 10px; background: #fff7d6; font-size: .86rem; }
 .bk.ok { background: var(--mint-soft); color: #2a6e52; }
+
+/* v18: accessibility check */
+.ax-top { display: flex; gap: 18px; align-items: flex-end; flex-wrap: wrap; }
+.ax-concept { flex: 1 1 260px; }
+.ax-sum { flex: 1 1 320px; display: flex; flex-direction: column; gap: 4px; font-size: .86rem; }
+.ax-bar { display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: var(--mint-soft); }
+.ax-bar i { display: block; transition: flex .3s; }
+.axb-ok { background: #1f7a50; } .axb-part { background: var(--c-yellow); } .axb-bar { background: #c2410c; } .axb-na { background: #b9c2cf; } .axb-open { background: var(--mint-soft); }
+.ax-warn { color: #9a3412; font-weight: 700; }
+.ax-legend { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.ax-areas { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 14px; }
+.ax-area { background: var(--mint-soft); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 10px; border: 2px solid transparent; transition: border-color .25s; }
+.ax-area.has-bar { border-color: var(--c-yellow); }
+.ax-area.needs-alt { border-color: #c2410c; }
+.ax-area header h3 { margin: 0; color: var(--c-blue); font-size: 1rem; }
+.ax-area header .hint { margin: 2px 0 0; font-size: .8rem; }
+.ax-q p { margin: 0 0 6px; font-size: .9rem; }
+.ax-btns { display: flex; flex-wrap: wrap; gap: 4px; }
+.axs { font-size: .76rem; border-radius: 999px; padding: 3px 9px; border: 1.5px solid var(--line); background: var(--paper); color: var(--navy); min-height: 26px; }
+span.axs { display: inline-flex; align-items: center; }
+.axs[aria-checked="true"].axs-ok { background: #1f7a50; border-color: #1f7a50; color: #fff; }
+.axs[aria-checked="true"].axs-part { background: var(--c-yellow); border-color: #a3a80f; }
+.axs[aria-checked="true"].axs-bar { background: #c2410c; border-color: #c2410c; color: #fff; }
+.axs[aria-checked="true"].axs-na { background: #5b6577; border-color: #5b6577; color: #fff; }
+.ax-area textarea, .ax-area input { width: 100%; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.ax-area textarea { border: 1.5px solid var(--line); border-radius: 10px; padding: 7px 9px; font: inherit; font-size: .88rem; resize: vertical; }
+.ax-area textarea.nudge { border-color: #c2410c; animation: nudge .5s ease-out; }
+@keyframes nudge { 0%, 100% { transform: none; } 30% { transform: translateX(-3px); } 60% { transform: translateX(3px); } }
+.ax-std { margin-top: 20px; padding-top: 14px; border-top: 1.5px solid var(--line); }
+.ax-std dl { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 8px 16px; margin: 0; }
+.ax-std dt { font-weight: 700; font-size: .9rem; }
+.ax-std dd { margin: 0; font-size: .88rem; color: var(--ink-soft); }
+@media (max-width: 640px) { .ax-std dl { grid-template-columns: 1fr; } .ax-std dd { margin-bottom: 6px; } }
 /* a11y: minimum target size 24px (WCAG 2.2, 2.5.8) */
 button.x, .mv, .sticky-grip .x { min-width: 24px; min-height: 24px; }
 .mm-list .linkbtn { min-height: 24px; }

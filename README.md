@@ -154,3 +154,8 @@ Seit v6 sind alle 33 Aktivitäten interaktiv.
 - **31 Iterationen** als Prozesslinie mit Schleifen (Prototyp bauen → testen → Feedback → ändern)
 - Erinnerung in der Projektkarte, das Projekt als Datei zu sichern; Browser wird gebeten, die Daten dauerhaft zu behalten
 - Freigabe-Link und QR-Code: https://mariekite.github.io/authentication-design-activities/
+
+## Neu in v18
+
+- **Aktivität 34 „Barrierefreiheits-Check“** (Kategorie Iterative Konzepte, nach 31): Fragen zu acht Bereichen (Sehen, Hören, Motorik, Kognition/Sprache, biometrische Merkmale, Situationen, Zugang zu Technik, Fehler/Wiederherstellung) mit „möglich / teilweise / Barriere / nicht relevant“, je Bereich Alternative und „Testen mit“, Übersicht mit Warnung bei Barrieren ohne Alternative, Standards als Referenz (WCAG 2.2 inkl. 3.3.8 Accessible Authentication, EN 301 549, European Accessibility Act/BFSG, ISO/IEC TR 29194, DIN 18040-1, BITV 2.0). Inhalte in `data.js` (`ADA_A11Y`, `ADA_A11Y_STANDARDS`). Nummer 34, damit gespeicherte Projekte kompatibel bleiben
+- Startgrafik passt sich beim Verkleinern/Vergrößern des Fensters ohne Verzerrung an; Flächen mit freier Anordnung starten auf schmalen Bildschirmen als Liste; Journey-Zeitachse scrollt auf kleinen Bildschirmen statt zu stauchen
